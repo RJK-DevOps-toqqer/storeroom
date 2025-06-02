@@ -1,1 +1,36 @@
-curl -o /dev/null -s -w "DNS: %{time_namelookup}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal: %{time_total}\n" http://10.0.2.15/index.html
+ubuntu-24@ubuntu-24:~/ats-cdn$ curl -o /dev/null -s -w "DNS: %{time_namelookup}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal: %{time_total}\n" http://10.0.2.15/index.html
+DNS: 0.000044
+Connect: 0.000168
+TTFB: 0.079434
+Total: 0.081663
+ubuntu-24@ubuntu-24:~/ats-cdn$ curl -o /dev/null -s -w "DNS: %{time_namelookup}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal: %{time_total}\n" http://media.local/
+DNS: 0.000310
+Connect: 0.107682
+TTFB: 0.114431
+Total: 0.114517
+ubuntu-24@ubuntu-24:~/ats-cdn$ curl -o /dev/null -s -w "DNS: %{time_namelookup}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal: %{time_total}\n" http://10.0.2.15/index.html
+DNS: 0.000036
+Connect: 0.000172
+TTFB: 0.084785
+Total: 0.084846
+ubuntu-24@ubuntu-24:~/ats-cdn$ curl -o /dev/null -s -w "DNS: %{time_namelookup}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal: %{time_total}\n" http://10.0.2.15/index.html
+DNS: 0.000031
+Connect: 0.000210
+TTFB: 0.115516
+Total: 0.115588
+ubuntu-24@ubuntu-24:~/ats-cdn$ curl -o /dev/null -s -w "DNS: %{time_namelookup}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal: %{time_total}\n" http://10.0.2.15/index.html
+DNS: 0.000059
+Connect: 0.000155
+TTFB: 0.060390
+Total: 0.060477
+ubuntu-24@ubuntu-24:~/ats-cdn$ curl -o /dev/null -s -w "DNS: %{time_namelookup}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal: %{time_total}\n" http://10.0.2.15/index.html
+DNS: 0.000030
+Connect: 0.000148
+TTFB: 0.247408
+Total: 0.247489
+ubuntu-24@ubuntu-24:~/ats-cdn$ curl -o /dev/null -s -w "DNS: %{time_namelookup}\nConnect: %{time_connect}\nTTFB: %{time_starttransfer}\nTotal: %{time_total}\n" http://media.local/
+DNS: 0.000360
+Connect: 0.056721
+TTFB: 0.061461
+Total: 0.061779
+ubuntu-24@ubuntu-24:~/ats-cdn$ 

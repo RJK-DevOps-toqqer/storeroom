@@ -1,38 +1,25 @@
- sudo rm -rf /var/cache/trafficserver/*
-ubuntu-24@ubuntu-24:/var/cache$ sudo -u ats traffic_server --rebuild
-Traffic Server 9.2.3 Apr  1 2024 05:10:25 localhost
-traffic_server: using root directory '/usr'
-Usage: traffic_server [--SWITCH [ARG]]
-  switch__________________type__default___description
-      --accept_mss        int   0         MSS for client connections
-  -a, --accept_thread     tog   false     Use an Accept Thread
-  -b, --accept_till_done  tog   true      Accept Till Done
-  -B, --action_tags       str             Vertical-bar-separated Behavior Tags
-      --bind_stderr       str             Regular file to bind stderr to
-      --bind_stdout       str             Regular file to bind stdout to
-      --block             tog   false     block for debug attach
-  -K, --clear_cache       on    false     Clear Cache on Startup
-  -k, --clear_hostdb      on    false     Clear HostDB on Startup
-  -C, --command           str             Maintenance Command to Execute
-      Commands: list, check, clear, clear_cache, clear_hostdb, verify_config, verify_global_plugin, verify_remap_plugin, help
-  -D, --conf_dir          str             config dir to verify
-  -T, --debug_tags        str             Vertical-bar-separated Debug Tags
-  -f, --disable_freelist  tog   false     Disable the freelist memory allocator
-  -F, --disable_pfreelist tog   false     Disable the freelist memory allocator in ProxyAllocator
-  -h, --help                              Print usage information
-  -p, --httpport          str   (null)    Port descriptor for HTTP Accept
-  -i, --interval          int   0         Statistics Interval
-  -m, --maxRecords        int   2500      Max number of librecords metrics and configurations (default & minimum: 1600)
-  -n, --net_threads       int   2         Number of Net Threads
-  -t, --poll_timeout      int   -1        poll timeout in milliseconds
-  -R, --regression        int   0         Regression Level (quick:1..long:3)
-  -l, --regression_list   tog   false     List Regression Tests
-  -r, --regression_test   str             Run Specific Regression Test
-  -M, --remote_management tog   false     Remote Management
-      --run-root                          using TS_RUNROOT as sandbox
-  -U, --udp_threads       int   0         Number of UDP Threads
-  -V, --version                           Print version string
+ystemctl status trafficserver
+● trafficserver.service - Apache Traffic Server is a fast, scalable and extensible caching proxy server.
+     Loaded: loaded (/usr/lib/systemd/system/trafficserver.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2025-06-02 13:13:59 IST; 2min 15s ago
+       Docs: man:traffic_server(8)
+   Main PID: 25401 (traffic_manager)
+      Tasks: 15 (limit: 8533)
+     Memory: 24.1M (peak: 24.6M)
+        CPU: 995ms
+     CGroup: /system.slice/trafficserver.service
+             ├─25401 /usr/bin/traffic_manager
+             ├─25407 /usr/bin/traffic_server -M --httpport 80:fd=8
+             └─25409 traffic_crashlog --syslog --wait --host x86_64-pc-linux-gnu --user trafficserver
+ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl edit trafficserver
+ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl edit trafficserver
+ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl edit trafficserver
+ubuntu-24@ubuntu-24:/var/cache$ ps aux | grep traffic_server
+traffic+   25407  0.6  0.4 352228 34460 ?        Sl   13:13   0:02 /usr/bin/traffic_server -M --httpport 80:fd=8
+ubuntu-+   25903  0.0  0.0  17944  2328 pts/1    S+   13:20   0:00 grep --color=auto traffic_server
+ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl daemon-reexec
+ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl daemon-reload
 ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl restart trafficserver
 ubuntu-24@ubuntu-24:/var/cache$ ps aux | grep traffic_server
-traffic+   25407  1.3  0.4 352228 34076 ?        Sl   13:13   0:00 /usr/bin/traffic_server -M --httpport 80:fd=8
-ubuntu-+   25418  0.0  0.0  17944  2252 pts/1    S+   13:14   0:00 grep --color=auto traffic_server
+traffic+   26205  3.6  0.4 286692 33604 ?        Sl   13:20   0:00 /usr/bin/traffic_server -M --httpport 80:fd=8
+ubuntu-+   26216  0.0  0.0  17944  2328 pts/1    S+   13:20   0:00 grep --color=auto traffic_server

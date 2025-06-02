@@ -31,5 +31,14 @@ ExecReload=/usr/bin/traffic_ctl config reload
 
 [Install]
 WantedBy=multi-user.target
-lines 4-32/32 (END)
 
+# /etc/systemd/system/trafficserver.service.d/override.conf
+[Service]
+User=ats
+Group=ats
+
+ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl daemon-reload
+ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl restart trafficserver
+ubuntu-24@ubuntu-24:/var/cache$ ps aux | grep traffic_server
+ubuntu-+   26541  0.0  0.0  17944  2248 pts/1    S+   13:25   0:00 grep --color=auto traffic_server
+ubuntu-24@ubuntu-24:/var/cache$ 

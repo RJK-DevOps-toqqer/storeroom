@@ -1,44 +1,20 @@
-sudo systemctl cat trafficserver
-# /usr/lib/systemd/system/trafficserver.service
-#
-#  Licensed to the Apache Software Foundation (ASF) under one
-#  or more contributor license agreements.  See the NOTICE file
-#  distributed with this work for additional information
-#  regarding copyright ownership.  The ASF licenses this file
-#  to you under the Apache License, Version 2.0 (the
-#  "License"); you may not use this file except in compliance
-#  with the License.  You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-#  Unless required by applicable law or agreed to in writing, software
-#  distributed under the License is distributed on an "AS IS" BASIS,
-#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#  See the License for the specific language governing permissions and
-#  limitations under the License.
-#
-[Unit]
-Description=Apache Traffic Server is a fast, scalable and extensible caching proxy server.
-Documentation=man:traffic_server(8)
-After=network-online.target
+ sudo systemctl status trafficserver
+× trafficserver.service - Apache Traffic Server is a fast, scalable and extensible caching proxy server.
+     Loaded: loaded (/usr/lib/systemd/system/trafficserver.service; enabled; preset: enabled)
+    Drop-In: /etc/systemd/system/trafficserver.service.d
+             └─override.conf
+     Active: failed (Result: exit-code) since Mon 2025-06-02 13:25:16 IST; 2min 41s ago
+   Duration: 13ms
+       Docs: man:traffic_server(8)
+    Process: 26538 ExecStart=/usr/bin/traffic_manager $TM_DAEMON_ARGS (code=exited, status=1/FAILURE)
+   Main PID: 26538 (code=exited, status=1/FAILURE)
+        CPU: 8ms
 
-[Service]
-Type=simple
-EnvironmentFile=-/etc/default/trafficserver
-PIDFile=/run/trafficserver/manager.lock
-ExecStart=/usr/bin/traffic_manager $TM_DAEMON_ARGS
-ExecReload=/usr/bin/traffic_ctl config reload
-
-[Install]
-WantedBy=multi-user.target
-
-# /etc/systemd/system/trafficserver.service.d/override.conf
-[Service]
-User=ats
-Group=ats
-
-ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl daemon-reload
-ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl restart trafficserver
-ubuntu-24@ubuntu-24:/var/cache$ ps aux | grep traffic_server
-ubuntu-+   26541  0.0  0.0  17944  2248 pts/1    S+   13:25   0:00 grep --color=auto traffic_server
-ubuntu-24@ubuntu-24:/var/cache$ 
+Jun 02 13:25:16 ubuntu-24 systemd[1]: Started trafficserver.service - Apache Traffic Server is a fast, scalable and extensible cac>
+Jun 02 13:25:16 ubuntu-24 (_manager)[26538]: trafficserver.service: Referenced but unset environment variable evaluates to an empt>
+Jun 02 13:25:16 ubuntu-24 traffic_manager[26538]: [E. Mgmt] log ==> [TrafficManager] using root directory '/usr'
+Jun 02 13:25:16 ubuntu-24 traffic_manager[26538]: NOTE: --- Manager Starting ---
+Jun 02 13:25:16 ubuntu-24 traffic_manager[26538]: NOTE: Manager Version: Apache Traffic Server - traffic_manager - 9.2.3 - (build >
+Jun 02 13:25:16 ubuntu-24 traffic_manager[26538]: FATAL: Can't open server lockfile '/run/trafficserver/server.lock' (Permission d>
+Jun 02 13:25:16 ubuntu-24 systemd[1]: trafficserver.service: Main process exited, code=exited, status=1/FAILURE
+Jun 02 13:25:16 ubuntu-24 systemd[1]: trafficserver.service: Failed with result 'exit-code'.

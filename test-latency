@@ -1,166 +1,38 @@
-sudo traffic_ctl metric match cache
-proxy.node.restarts.proxy.cache_ready_time 1748846645
-proxy.process.cache_total_hits 0
-proxy.process.cache_total_misses 26
-proxy.process.cache_total_requests 26
-proxy.process.cache_total_hits_bytes 0
-proxy.process.cache_total_misses_bytes 15199
-proxy.process.cache_total_bytes 15199
-proxy.process.http.current_cache_connections 0
-proxy.process.http.cache_lookups 26
-proxy.process.http.cache_writes 0
-proxy.process.http.cache_updates 0
-proxy.process.http.cache_deletes 0
-proxy.process.http.cache_hit_fresh 0
-proxy.process.http.cache_hit_mem_fresh 0
-proxy.process.http.cache_hit_rww 0
-proxy.process.http.cache_hit_revalidated 0
-proxy.process.http.cache_hit_ims 0
-proxy.process.http.cache_hit_stale_served 0
-proxy.process.http.cache_miss_cold 19
-proxy.process.http.cache_miss_changed 0
-proxy.process.http.cache_miss_client_no_cache 0
-proxy.process.http.cache_miss_client_not_cacheable 0
-proxy.process.http.cache_miss_ims 7
-proxy.process.http.cache_read_error 0
-proxy.process.http.cache_write_errors 0
-proxy.process.http.cache_read_errors 0
-proxy.process.http.transaction_counts.miss_not_cacheable 0
-proxy.process.http.transaction_totaltime.miss_not_cacheable 0.000000
-proxy.process.http.transaction_counts.miss_client_no_cache 0
-proxy.process.http.transaction_totaltime.miss_client_no_cache 0.000000
-proxy.process.http.cache.open_write.adjust_thread 0
-proxy.process.http.milestone.cache_open_read_begin 0
-proxy.process.http.milestone.cache_open_read_end 0
-proxy.process.http.milestone.cache_open_write_begin 368
-proxy.process.http.milestone.cache_open_write_end 369
-proxy.process.cache.read_per_sec 0.000000
-proxy.process.cache.write_per_sec 0.000000
-proxy.process.cache.KB_read_per_sec 0.000000
-proxy.process.cache.KB_write_per_sec 0.000000
-proxy.process.cache.bytes_used 0
-proxy.process.cache.bytes_total 268066816
-proxy.process.cache.ram_cache.total_bytes 352256
-proxy.process.cache.ram_cache.bytes_used 0
-proxy.process.cache.ram_cache.hits 0
-proxy.process.cache.ram_cache.misses 0
-proxy.process.cache.pread_count 0
-proxy.process.cache.percent_full 0
-proxy.process.cache.lookup.active 0
-proxy.process.cache.lookup.success 0
-proxy.process.cache.lookup.failure 0
-proxy.process.cache.read.active 0
-proxy.process.cache.read.success 0
-proxy.process.cache.read.failure 26
-proxy.process.cache.read.seek.failure 0
-proxy.process.cache.read.invalid 0
-proxy.process.cache.write.active 0
-proxy.process.cache.write.success 0
-proxy.process.cache.write.failure 0
-proxy.process.cache.write.backlog.failure 0
-proxy.process.cache.update.active 0
-proxy.process.cache.update.success 0
-proxy.process.cache.update.failure 0
-proxy.process.cache.remove.active 0
-proxy.process.cache.remove.success 0
-proxy.process.cache.remove.failure 0
-proxy.process.cache.evacuate.active 0
-proxy.process.cache.evacuate.success 0
-proxy.process.cache.evacuate.failure 0
-proxy.process.cache.scan.active 0
-proxy.process.cache.scan.success 0
-proxy.process.cache.scan.failure 0
-proxy.process.cache.direntries.total 33464
-proxy.process.cache.direntries.used 0
-proxy.process.cache.directory_collision 0
-proxy.process.cache.frags_per_doc.1 0
-proxy.process.cache.frags_per_doc.2 0
-proxy.process.cache.frags_per_doc.3+ 0
-proxy.process.cache.read_busy.success 0
-proxy.process.cache.read_busy.failure 0
-proxy.process.cache.write_bytes_stat 0
-proxy.process.cache.vector_marshals 0
-proxy.process.cache.hdr_marshals 0
-proxy.process.cache.hdr_marshal_bytes 0
-proxy.process.cache.gc_bytes_evacuated 0
-proxy.process.cache.gc_frags_evacuated 0
-proxy.process.cache.wrap_count 0
-proxy.process.cache.sync.count 0
-proxy.process.cache.sync.bytes 0
-proxy.process.cache.sync.time 0
-proxy.process.cache.span.errors.read 0
-proxy.process.cache.span.errors.write 0
-proxy.process.cache.span.failing 0
-proxy.process.cache.span.offline 0
-proxy.process.cache.span.online 1
-proxy.process.hostdb.cache.current_items 1
-proxy.process.hostdb.cache.current_size 92
-proxy.process.hostdb.cache.total_inserts 25
-proxy.process.hostdb.cache.total_failed_inserts 0
-proxy.process.hostdb.cache.total_lookups 101
-proxy.process.hostdb.cache.total_hits 98
-proxy.process.hostdb.cache.last_sync.time 0
-proxy.process.hostdb.cache.last_sync.total_items 0
-proxy.process.hostdb.cache.last_sync.total_size 0
-proxy.process.ssl.ssl_session_cache_hit 0
-proxy.process.ssl.ssl_origin_session_cache_hit 0
-proxy.process.ssl.ssl_session_cache_new_session 0
-proxy.process.ssl.ssl_session_cache_miss 0
-proxy.process.ssl.ssl_origin_session_cache_miss 0
-proxy.process.ssl.ssl_session_cache_eviction 0
-proxy.process.ssl.ssl_session_cache_lock_contention 0
-proxy.process.cache.volume_0.bytes_used 0
-proxy.process.cache.volume_0.bytes_total 268066816
-proxy.process.cache.volume_0.ram_cache.total_bytes 352256
-proxy.process.cache.volume_0.ram_cache.bytes_used 0
-proxy.process.cache.volume_0.ram_cache.hits 0
-proxy.process.cache.volume_0.ram_cache.misses 0
-proxy.process.cache.volume_0.pread_count 0
-proxy.process.cache.volume_0.percent_full 0
-proxy.process.cache.volume_0.lookup.active 0
-proxy.process.cache.volume_0.lookup.success 0
-proxy.process.cache.volume_0.lookup.failure 0
-proxy.process.cache.volume_0.read.active 0
-proxy.process.cache.volume_0.read.success 0
-proxy.process.cache.volume_0.read.failure 26
-proxy.process.cache.volume_0.read.seek.failure 0
-proxy.process.cache.volume_0.read.invalid 0
-proxy.process.cache.volume_0.write.active 0
-proxy.process.cache.volume_0.write.success 0
-proxy.process.cache.volume_0.write.failure 0
-proxy.process.cache.volume_0.write.backlog.failure 0
-proxy.process.cache.volume_0.update.active 0
-proxy.process.cache.volume_0.update.success 0
-proxy.process.cache.volume_0.update.failure 0
-proxy.process.cache.volume_0.remove.active 0
-proxy.process.cache.volume_0.remove.success 0
-proxy.process.cache.volume_0.remove.failure 0
-proxy.process.cache.volume_0.evacuate.active 0
-proxy.process.cache.volume_0.evacuate.success 0
-proxy.process.cache.volume_0.evacuate.failure 0
-proxy.process.cache.volume_0.scan.active 0
-proxy.process.cache.volume_0.scan.success 0
-proxy.process.cache.volume_0.scan.failure 0
-proxy.process.cache.volume_0.direntries.total 33464
-proxy.process.cache.volume_0.direntries.used 0
-proxy.process.cache.volume_0.directory_collision 0
-proxy.process.cache.volume_0.frags_per_doc.1 0
-proxy.process.cache.volume_0.frags_per_doc.2 0
-proxy.process.cache.volume_0.frags_per_doc.3+ 0
-proxy.process.cache.volume_0.read_busy.success 0
-proxy.process.cache.volume_0.read_busy.failure 0
-proxy.process.cache.volume_0.write_bytes_stat 0
-proxy.process.cache.volume_0.vector_marshals 0
-proxy.process.cache.volume_0.hdr_marshals 0
-proxy.process.cache.volume_0.hdr_marshal_bytes 0
-proxy.process.cache.volume_0.gc_bytes_evacuated 0
-proxy.process.cache.volume_0.gc_frags_evacuated 0
-proxy.process.cache.volume_0.wrap_count 0
-proxy.process.cache.volume_0.sync.count 0
-proxy.process.cache.volume_0.sync.bytes 0
-proxy.process.cache.volume_0.sync.time 0
-proxy.process.cache.volume_0.span.errors.read 0
-proxy.process.cache.volume_0.span.errors.write 0
-proxy.process.cache.volume_0.span.failing 0
-proxy.process.cache.volume_0.span.offline 0
-proxy.process.cache.volume_0.span.online 0
+ sudo rm -rf /var/cache/trafficserver/*
+ubuntu-24@ubuntu-24:/var/cache$ sudo -u ats traffic_server --rebuild
+Traffic Server 9.2.3 Apr  1 2024 05:10:25 localhost
+traffic_server: using root directory '/usr'
+Usage: traffic_server [--SWITCH [ARG]]
+  switch__________________type__default___description
+      --accept_mss        int   0         MSS for client connections
+  -a, --accept_thread     tog   false     Use an Accept Thread
+  -b, --accept_till_done  tog   true      Accept Till Done
+  -B, --action_tags       str             Vertical-bar-separated Behavior Tags
+      --bind_stderr       str             Regular file to bind stderr to
+      --bind_stdout       str             Regular file to bind stdout to
+      --block             tog   false     block for debug attach
+  -K, --clear_cache       on    false     Clear Cache on Startup
+  -k, --clear_hostdb      on    false     Clear HostDB on Startup
+  -C, --command           str             Maintenance Command to Execute
+      Commands: list, check, clear, clear_cache, clear_hostdb, verify_config, verify_global_plugin, verify_remap_plugin, help
+  -D, --conf_dir          str             config dir to verify
+  -T, --debug_tags        str             Vertical-bar-separated Debug Tags
+  -f, --disable_freelist  tog   false     Disable the freelist memory allocator
+  -F, --disable_pfreelist tog   false     Disable the freelist memory allocator in ProxyAllocator
+  -h, --help                              Print usage information
+  -p, --httpport          str   (null)    Port descriptor for HTTP Accept
+  -i, --interval          int   0         Statistics Interval
+  -m, --maxRecords        int   2500      Max number of librecords metrics and configurations (default & minimum: 1600)
+  -n, --net_threads       int   2         Number of Net Threads
+  -t, --poll_timeout      int   -1        poll timeout in milliseconds
+  -R, --regression        int   0         Regression Level (quick:1..long:3)
+  -l, --regression_list   tog   false     List Regression Tests
+  -r, --regression_test   str             Run Specific Regression Test
+  -M, --remote_management tog   false     Remote Management
+      --run-root                          using TS_RUNROOT as sandbox
+  -U, --udp_threads       int   0         Number of UDP Threads
+  -V, --version                           Print version string
+ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl restart trafficserver
+ubuntu-24@ubuntu-24:/var/cache$ ps aux | grep traffic_server
+traffic+   25407  1.3  0.4 352228 34076 ?        Sl   13:13   0:00 /usr/bin/traffic_server -M --httpport 80:fd=8
+ubuntu-+   25418  0.0  0.0  17944  2252 pts/1    S+   13:14   0:00 grep --color=auto traffic_server

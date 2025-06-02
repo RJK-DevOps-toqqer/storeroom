@@ -1,25 +1,35 @@
-ystemctl status trafficserver
-● trafficserver.service - Apache Traffic Server is a fast, scalable and extensible caching proxy server.
-     Loaded: loaded (/usr/lib/systemd/system/trafficserver.service; enabled; preset: enabled)
-     Active: active (running) since Mon 2025-06-02 13:13:59 IST; 2min 15s ago
-       Docs: man:traffic_server(8)
-   Main PID: 25401 (traffic_manager)
-      Tasks: 15 (limit: 8533)
-     Memory: 24.1M (peak: 24.6M)
-        CPU: 995ms
-     CGroup: /system.slice/trafficserver.service
-             ├─25401 /usr/bin/traffic_manager
-             ├─25407 /usr/bin/traffic_server -M --httpport 80:fd=8
-             └─25409 traffic_crashlog --syslog --wait --host x86_64-pc-linux-gnu --user trafficserver
-ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl edit trafficserver
-ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl edit trafficserver
-ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl edit trafficserver
-ubuntu-24@ubuntu-24:/var/cache$ ps aux | grep traffic_server
-traffic+   25407  0.6  0.4 352228 34460 ?        Sl   13:13   0:02 /usr/bin/traffic_server -M --httpport 80:fd=8
-ubuntu-+   25903  0.0  0.0  17944  2328 pts/1    S+   13:20   0:00 grep --color=auto traffic_server
-ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl daemon-reexec
-ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl daemon-reload
-ubuntu-24@ubuntu-24:/var/cache$ sudo systemctl restart trafficserver
-ubuntu-24@ubuntu-24:/var/cache$ ps aux | grep traffic_server
-traffic+   26205  3.6  0.4 286692 33604 ?        Sl   13:20   0:00 /usr/bin/traffic_server -M --httpport 80:fd=8
-ubuntu-+   26216  0.0  0.0  17944  2328 pts/1    S+   13:20   0:00 grep --color=auto traffic_server
+sudo systemctl cat trafficserver
+# /usr/lib/systemd/system/trafficserver.service
+#
+#  Licensed to the Apache Software Foundation (ASF) under one
+#  or more contributor license agreements.  See the NOTICE file
+#  distributed with this work for additional information
+#  regarding copyright ownership.  The ASF licenses this file
+#  to you under the Apache License, Version 2.0 (the
+#  "License"); you may not use this file except in compliance
+#  with the License.  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#
+[Unit]
+Description=Apache Traffic Server is a fast, scalable and extensible caching proxy server.
+Documentation=man:traffic_server(8)
+After=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/trafficserver
+PIDFile=/run/trafficserver/manager.lock
+ExecStart=/usr/bin/traffic_manager $TM_DAEMON_ARGS
+ExecReload=/usr/bin/traffic_ctl config reload
+
+[Install]
+WantedBy=multi-user.target
+lines 4-32/32 (END)
+
